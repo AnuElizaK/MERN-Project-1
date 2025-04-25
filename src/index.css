@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+body{
+    background: linear-gradient(to bottom right, #baf8fe, #d9cdff, #fccee5);
+}
+#ch{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin-top: 50px;
+}
+#clubs{
+    background-color: rgb(207, 255, 202);
+}
+#anno{
+    background-color: rgb(255, 206, 206);
+}
+#events{
+    background-color: rgb(255, 255, 202);
+}
+small{
+    font-size: 0.6em;
+    color: #746a93
+}
+#abutton:hover{
+    background-color: rgb(238, 208, 255);
+    transition: 0.3s; 
+}
+#asbutton{
+    transition: 0.3s ease;
+}
+#asbutton:hover{
+    background: linear-gradient(to bottom right, #baf8fe7d, #d9cdff81, #fccee580); 
+}

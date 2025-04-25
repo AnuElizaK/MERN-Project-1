@@ -1,0 +1,70 @@
+.announcement-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+  }
+  
+  .announcement-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000000;
+  }
+  
+  .announcement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .announcement-card {
+    background: #e1fafc;
+    border-left: 4px solid #741a8f;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .club-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #741a8f;
+  }
+  
+  .announcement-category {
+    font-size: 0.85rem;
+    color: #741a8f;
+    background-color: #e7dbff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+  }
+  
+  .announcement-message {
+    margin: 0.5rem 0;
+    color: #443751;
+  }
+  
+  .announcement-date,
+  .announcement-contact,
+  .announcement-link {
+    font-size: 0.85rem;
+    color: #766b80;
+  }
+  
+  .announcement-link a {
+    color: #741a8f;
+    text-decoration: none;
+  }
+  
+  .announcement-link a:hover {
+    text-decoration: underline;
+  }
+
+  .announcement-time {
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
