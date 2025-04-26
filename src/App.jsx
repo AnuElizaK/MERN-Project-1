@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
 import AdminSidebar from './components/AdminSidebar'
+import Dashboard from './components/Dashboard'
 import AdminDashboard from './components/AdminDashboard'
 import AdminMembers from './components/AdminMembers'
 import AdminEvents from './components/AdminEvents'
 import AdminAnno from './components/AdminAnno'
 import AdminReports from './components/AdminReports'
-import Header from './components/Header'
-import Dashboard from './components/Dashboard'
 import Announcements from './components/Announcements'
 import Profile from './components/Profile'
 import Events from './components/Events'
@@ -19,13 +19,23 @@ import Club5 from './components/Club5'
 import Login from './components/Login'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import Enroll from './components/Enroll'
+
 import './index.css'
 
 const App = () => {
-  const role = localStorage.getItem('userRole'); 
+  const [role, setRole] = useState(localStorage.getItem('userRole'));
+
+  // Update role when localStorage changes (after login)
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setRole(localStorage.getItem('userRole'));
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
   return (
     <Router>
-      {role === 'admin' && <AdminSidebar />}
+      {role=== 'admin' && <AdminSidebar/>}
       {role === 'member' && <Header />}
 
       <Routes>       
@@ -42,7 +52,7 @@ const App = () => {
         )}        
         {role === 'member' && (
           <>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/events" element={<ProtectedRoutes><Events /></ProtectedRoutes>} />
             <Route path="/announcements" element={<ProtectedRoutes><Announcements /></ProtectedRoutes>} />
             <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
@@ -51,7 +61,8 @@ const App = () => {
             <Route path="/club3" element={<ProtectedRoutes><Club3 /></ProtectedRoutes>} />
             <Route path="/club4" element={<ProtectedRoutes><Club4 /></ProtectedRoutes>} />
             <Route path="/club5" element={<ProtectedRoutes><Club5 /></ProtectedRoutes>} />
-            <Route path="/enroll" element={<ProtectedRoutes><Enroll /></ProtectedRoutes>} />
+            <Route path="/enrollment" element={<ProtectedRoutes><Enroll /></ProtectedRoutes>} />
+
           </>
         )}
       </Routes>

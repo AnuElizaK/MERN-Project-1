@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Divider, Box, Button } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Avatar } from '@mui/material'
+
 import './Profile.css';
 
 const Profile = () => {
@@ -52,11 +54,9 @@ const Profile = () => {
 
         {/* Left Panel */}
         <div className="profile-left">
-          <img
-            src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png"
-            alt="Profile"
-            className="profile-img"
-          />
+          <>
+            <Avatar sx={{ width: 200, height: 200, mr: 'auto', ml: 'auto', mb: 1 }} alt="profile-img" />
+          </>
           <h1>{user.name}</h1>
           <h3>{user.role}</h3>
         </div>
