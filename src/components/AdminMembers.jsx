@@ -191,7 +191,7 @@ const AdminMembers = ({ isSidebarExpanded }) => {
                 variant="contained"
                 size="small"
                 sx={{
-                  backgroundColor: '#ff1f1f',
+                  backgroundColor: '#f44336',
                   color: '#fff',
                   borderRadius: '10px',
                   ml: 2,
@@ -232,7 +232,7 @@ const AdminMembers = ({ isSidebarExpanded }) => {
                 variant="contained"
                 size="small"
                 sx={{
-                  backgroundColor: '#c3c300',
+                  backgroundColor: '#ff9800',
                   color: '#fff',
                   borderRadius: '10px',
                   ml: 2,

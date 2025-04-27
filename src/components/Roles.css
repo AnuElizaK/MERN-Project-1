@@ -1,0 +1,30 @@
+#rh01{
+    font-family: 'Gilda Display', cursive;
+    text-align: center;
+    font-weight: 100;
+    font-size: larger;
+    line-height: 2.0;
+    margin-top: 40px;
+}
+#rh02{
+    text-align: center;
+    font-weight: 100;
+    margin-top: 20px;
+}
+#rbox{
+    background: linear-gradient(to bottom, #ffffff00, #8379a170, #ffffff00 );
+    width: 40%;
+    margin: auto;
+}
+#rc1, #rc2{
+    background-color: #f2eeff97;
+    transition: 0.5s;
+}
+#rc1:hover, #rc2:hover{
+    background-color: #f2eeff;
+    transform: scale(1.03);
+}
+#rb{
+    color: white;
+    background: linear-gradient(to right, #000000, #3b0e76, #741a8f );
+}

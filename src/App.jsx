@@ -16,6 +16,7 @@ import Club2 from './components/Club2'
 import Club3 from './components/Club3'
 import Club4 from './components/Club4'
 import Club5 from './components/Club5'
+import Roles from './components/Roles'
 import Login from './components/Login'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import Enroll from './components/Enroll'
@@ -35,12 +36,13 @@ const App = () => {
   }, []);
   return (
     <Router>
-      {role=== 'admin' && <AdminSidebar/>}
-      {role === 'member' && <Header />}
+      {role=== 'Admin' && <AdminSidebar/>}
+      {role === 'Member' && <Header />}
 
-      <Routes>       
-        <Route path="/" element={<Login />} />
-        {role === 'admin' && (
+      <Routes>
+        <Route path="/" element={<Roles />} />
+        <Route path="/login" element={<Login />} />
+        {role === 'Admin' && (
           <>
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/adminmembers" element={<ProtectedRoutes><AdminMembers /></ProtectedRoutes>} />
@@ -50,7 +52,7 @@ const App = () => {
           <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
           </>
         )}        
-        {role === 'member' && (
+        {role === 'Member' && (
           <>
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/events" element={<ProtectedRoutes><Events /></ProtectedRoutes>} />
