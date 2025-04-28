@@ -44,7 +44,10 @@ const Login = () => {
 
             if (role === 'Admin') {
                 navigate('/admindashboard');
-                window.dispatchEvent(new Event('storage'));
+                window.dispatchEvent(new Event('storage'));           
+            } else if (role === 'Member' && loginType === 'Admin') {
+                alert('Access denied: You do not have admin privileges. Try logging in as a member.');
+                navigate('/');
             } else {
                 navigate('/dashboard');
                 window.dispatchEvent(new Event('storage'));
@@ -52,7 +55,7 @@ const Login = () => {
         } catch (error) {
             if (error.response?.status === 403) {
                 // Handle insufficient access
-                alert('Access denied: You do not have admin privileges.');
+                alert('Access denied: Only Admins.');
                 navigate('/'); // Redirect to the roles selection page
             } else {
                 console.error(error);

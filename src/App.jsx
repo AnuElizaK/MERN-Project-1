@@ -20,7 +20,6 @@ import Roles from './components/Roles'
 import Login from './components/Login'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import Enroll from './components/Enroll'
-
 import './index.css'
 
 const App = () => {
