@@ -27,7 +27,7 @@ body{
 }
 small{
     font-size: 0.6em;
-    color: #746a93
+    color: #746a93;
 }
 #abutton:hover{
     background-color: rgb(238, 208, 255);
@@ -38,4 +38,16 @@ small{
 }
 #asbutton:hover{
     background: linear-gradient(to bottom right, #baf8fe7d, #d9cdff81, #fccee580); 
+}
+#adg{
+    background: linear-gradient(to right, #00000000, #3b0e767f, #741a8f );
+}
+#adb{
+    color: #3b0e76;
+    border: 1px solid #3b0e76;
+}
+#adb:hover{
+    color: white;
+    background-color: #741a8f;
+    transition: 0.5s ease;
 }

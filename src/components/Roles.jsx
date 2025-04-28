@@ -28,7 +28,7 @@ const Roles = () => {
             <h1 id="rh01">COLLEGE NAME</h1>
             <h1 id="rh02">Club Portal</h1>
 
-            <Divider id="d" sx={{ width: '50%', height: 1, marginTop: 4 }} />
+            <Divider id="d" sx={{ width: '30%', height: 1, marginTop: 4 }} />
 
             <Card
                 id="rc1"

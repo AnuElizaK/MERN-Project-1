@@ -12,9 +12,9 @@ import {
   Tooltip,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
-import GroupsIcon from '@mui/icons-material/Groups';
+import { Groups, Event, Campaign, Assessment } from '@mui/icons-material';
 
 const AdminSidebar = () => {
   const [isSidebarExpanded, setSidebarExpanded] = React.useState(false);
@@ -71,15 +71,54 @@ const AdminSidebar = () => {
             </Box>
           )}
         </Box>
+
         <List>
+        
         <ListItem onClick={() => window.location.href = '/AdminDashboard'} button id="asbutton">  
             <Tooltip title="Dashboard" placement="right">
-              <DashboardIcon sx={{ color: 'white', marginLeft: 1  }} />
+              <HomeIcon sx={{ color: 'white', marginLeft: 1  }} />
             </Tooltip>
             {isSidebarExpanded && (
               <ListItemText primary="Dashboard" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
             )}
           </ListItem>
+
+          <ListItem onClick={() => window.location.href = '/AdminMembers'} button id="asbutton">  
+            <Tooltip title="Members" placement="right">
+              <Groups sx={{ color: 'white', marginLeft: 1  }} />
+            </Tooltip>
+            {isSidebarExpanded && (
+              <ListItemText primary="Manage Members" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
+            )}
+          </ListItem>
+
+          <ListItem onClick={() => window.location.href = '/AdminEvents'} button id="asbutton">  
+            <Tooltip title="Events" placement="right">
+              <Event sx={{ color: 'white', marginLeft: 1  }} />
+            </Tooltip>
+            {isSidebarExpanded && (
+              <ListItemText primary="Manage Events" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
+            )}
+          </ListItem>
+
+          <ListItem onClick={() => window.location.href = '/AdminAnno'} button id="asbutton">  
+            <Tooltip title="Announcements" placement="right">
+              <Campaign sx={{ color: 'white', marginLeft: 1  }} />
+            </Tooltip>
+            {isSidebarExpanded && (
+              <ListItemText primary="Manage Announcements" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
+            )}
+          </ListItem>
+
+          <ListItem onClick={() => window.location.href = '/AdminReports'} button id="asbutton">  
+            <Tooltip title="Reports" placement="right">
+              <Assessment sx={{ color: 'white', marginLeft: 1  }} />
+            </Tooltip>
+            {isSidebarExpanded && (
+              <ListItemText primary="Manage Reports" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
+            )}
+          </ListItem>
+
           <ListItem onClick={() => window.location.href = '/Profile'} button id="asbutton">  
             <Tooltip title="Profile" placement="right">
               <Avatar sx={{ width: 32, height: 32, marginLeft: 0.5 }} alt="profile-img" />
@@ -88,6 +127,7 @@ const AdminSidebar = () => {
               <ListItemText primary="Profile" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
             )}
           </ListItem>
+
           <ListItem
             button
             id="asbutton"
@@ -105,15 +145,8 @@ const AdminSidebar = () => {
                 sx={{ color: isSidebarExpanded ? 'white' : 'inherit', marginLeft: isSidebarExpanded ? 2 : 0 }}
               />)}
           </ListItem>
-          <ListItem onClick={() => window.location.href = '/AdminMembers'} button id="asbutton">  
-            <Tooltip title="Manage Members" placement="right">
-              <GroupsIcon sx={{ width: 32, height: 32, marginLeft: 0.5 }} />
-            </Tooltip>
-            {isSidebarExpanded && (
-              <ListItemText primary="Profile" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
-            )}
-          </ListItem>
         </List>
+
       </Drawer>
     </Box>
   );

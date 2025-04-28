@@ -7,84 +7,138 @@ import {
   Typography,
   Button,
   Grid,
-  Container
+  Paper
 } from '@mui/material';
 import { Groups, Event, Campaign, Assessment } from '@mui/icons-material';
 
 const AdminDashboard = ({ isSidebarExpanded }) => {
   const navigate = useNavigate();
-  const handleCardClick = (path) => { navigate(path); }; // Navigates to the given path
+  const handleCardClick = (path) => {
+    navigate(path);
+  };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      {/* Main Content */}
+    <Box
+      sx={{
+        display: 'flex',
+        minHeight: '100vh',
+        transition: 'margin-left 0.3s ease',
+        marginLeft: isSidebarExpanded ? 0 : 10, // Adjust margin dynamically
+        padding: 5,
+      }}
+    >
       <Box
-        component="main"
         sx={{
-          flexGrow: 1,
-          marginLeft: isSidebarExpanded ? 0 : 14,  // Adjust content margin
+          flex: 1, // Ensure the content takes full width minus the sidebar
         }}
       >
-        <Container maxWidth="lg" sx={{ mt: 5 }}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ fontWeight: 'thin', mb: 4, fontFamily: 'Gilda Display' }}
-          >
-            Welcome club leader!<br />
-            <small>This is your space. An all-in-one place to manage everything about your club.</small>
-          </Typography>
+        {/* Header Section */}
+        <Typography
+          variant="h5"
+          gutterBottom
+          sx={{ fontWeight: 'thin', mb: 4, fontFamily: 'Gilda Display', fontSize: 30 }}
+        >
+          Welcome club leader!<br />
+          <small>This is your all-in-one space to manage everything about your club.</small>
+        </Typography>
 
-          <Grid container spacing={5}>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3 }}>
-                <Groups sx={{ fontSize: 40, color: '#3f51b5' }} />
-                <CardContent>
-                  <Typography variant="h6">Manage Members</Typography>
-                  <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminMembers')}>
-                    View Members
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3 }}>
-                <Event sx={{ fontSize: 40, color: '#4caf50' }} />
-                <CardContent>
-                  <Typography variant="h6">Manage Events</Typography>
-                  <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminEvents')}>
-                    View Events
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3 }}>
-                <Campaign sx={{ fontSize: 40, color: '#f44336' }} />
-                <CardContent>
-                  <Typography variant="h6">Announcements</Typography>
-                  <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminAnno')}>
-                    Post Announcements
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3 }}>
-                <Assessment sx={{ fontSize: 40, color: '#ff9800' }} />
-                <CardContent>
-                  <Typography variant="h6">Reports</Typography>
-                  <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminReports')}>
-                    View Reports
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
+        {/* Statistics Section */}
+        <Grid id="adg" container spacing={3} sx={{ mb: 6, padding: 3, borderRadius: 2 }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ fontWeight: 'thin', mb: 2, verticalAlign: 'middle' }}>
+            Club 1<br />
+            <small>STATS</small>
+        </Typography>
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper sx={{ padding: 2, textAlign: 'center', borderRadius: 2 }}>
+              <Typography variant="h6">Total Members</Typography>
+              <Typography variant="h4" sx={{ fontFamily: 'Gilda Display' }}>80</Typography>
+            </Paper>
           </Grid>
-        </Container>
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper sx={{ padding: 2, textAlign: 'center', borderRadius: 2 }}>
+              <Typography variant="h6">Upcoming Events</Typography>
+              <Typography variant="h4" sx={{ fontFamily: 'Gilda Display' }}>6</Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper sx={{ padding: 2, textAlign: 'center', borderRadius: 2 }}>
+              <Typography variant="h6">Posts this Month</Typography>
+              <Typography variant="h4" sx={{ fontFamily: 'Gilda Display' }}>12</Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper sx={{ padding: 2, textAlign: 'center', borderRadius: 2 }}>
+              <Typography variant="h6">New Enrollments</Typography>
+              <Typography variant="h4" sx={{ fontFamily: 'Gilda Display' }}>10</Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        {/* Action Section */}
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3, maxHeight: 200, maxWidth: 250 }}>
+              <Groups sx={{ fontSize: 40, color: '#3f51b5' }} />
+              <CardContent>
+                <Typography variant="h6">Manage Club</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  View and manage club members, enrollments and more.
+                </Typography>
+                <Button id="adb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminMembers')}>
+                  Manage
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3, maxHeight: 200, maxWidth: 250 }}>
+              <Event sx={{ fontSize: 40, color: '#4caf50' }} />
+              <CardContent>
+                <Typography variant="h6">Manage Events</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  Add, edit, cancel or manage club events.
+                </Typography>
+                <Button id="adb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminEvents')}>
+                  Manage
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3, maxHeight: 200, maxWidth: 250 }}>
+              <Campaign sx={{ fontSize: 40, color: '#f44336' }} />
+              <CardContent>
+                <Typography variant="h6">Announcements</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  Create, publish and view announcements.
+                </Typography>
+                <Button id="adb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminAnno')}>
+                  Post Announcements
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3, maxHeight: 200, maxWidth: 250 }}>
+              <Assessment sx={{ fontSize: 40, color: '#ff9800' }} />
+              <CardContent>
+                <Typography variant="h6">Reports</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  Create, view, edit, publish or remove reports.
+                </Typography>
+                <Button id="adb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminReports')}>
+                  View Reports
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

@@ -34,7 +34,10 @@ const AdminMembers = ({ isSidebarExpanded }) => {
   };
 
   return (
-    <Box sx={{ padding: 3, marginLeft: isSidebarExpanded ? 0 : 14 }}>
+    <Box sx={{ minHeight: '100vh',
+      transition: 'margin-left 0.3s ease', 
+      marginLeft: isSidebarExpanded ? 0 : 10, 
+      padding: 5 }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4" sx={{ fontFamily: 'Gilda Display'}}>
           Members
