@@ -25,36 +25,34 @@ const Roles = () => {
 
     return (
         <>
-            <Box id="rbox">
-                <h1 id="rh01">COLLEGE NAME</h1>
-                <h1 id="rh02">Club Portal</h1>
+            <h1 id="rh01">COLLEGE NAME</h1>
+            <h1 id="rh02">Club Portal</h1>
 
-                <Divider id="d" sx={{ width: '70%', height: 1, marginTop: 4 }} />
+            <Divider id="d" sx={{ width: '50%', height: 1, marginTop: 4 }} />
 
-                <Card
-                    id="rc1"
-                    sx={{ p: 2, textAlign: 'center', borderRadius: 2, boxShadow: 3, maxWidth: 300, margin: 'auto', mt: 5 }}>
-                    <AccountCircleIcon sx={{ fontSize: 40, color: '#4caf50' }} />
-                    <CardContent>
-                        <Typography variant="h6">Admins/Executives</Typography>
-                        <Button id="rb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={handleAdminLogin}>
-                            Go to Login
-                        </Button>
-                    </CardContent>
-                </Card>
+            <Card
+                id="rc1"
+                sx={{ p: 2, textAlign: 'center', borderRadius: 2, boxShadow: 3, maxWidth: 300, margin: 'auto', mt: 5 }}>
+                <AccountCircleIcon sx={{ fontSize: 40, color: '#4caf50' }} />
+                <CardContent>
+                    <Typography variant="h6">Admins/Executives</Typography>
+                    <Button id="rb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={handleAdminLogin}>
+                        Go to Login
+                    </Button>
+                </CardContent>
+            </Card>
 
-                <Card
-                    id="rc2"
-                    sx={{ p: 2, textAlign: 'center', borderRadius: 2, boxShadow: 3, maxWidth: 300, margin: 'auto', mt: 5, mb: 5 }}>
-                    <Groups sx={{ fontSize: 40, color: '#4caf50' }} />
-                    <CardContent>
-                        <Typography variant="h6">Members</Typography>
-                        <Button id="rb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={handleMemberLogin}>
-                            Go to Login
-                        </Button>
-                    </CardContent>
-                </Card>
-            </Box>
+            <Card
+                id="rc2"
+                sx={{ p: 2, textAlign: 'center', borderRadius: 2, boxShadow: 3, maxWidth: 300, margin: 'auto', mt: 5, mb: 5 }}>
+                <Groups sx={{ fontSize: 40, color: '#4caf50' }} />
+                <CardContent>
+                    <Typography variant="h6">Members</Typography>
+                    <Button id="rb" variant="outlined" fullWidth sx={{ mt: 2 }} onClick={handleMemberLogin}>
+                        Go to Login
+                    </Button>
+                </CardContent>
+            </Card>
         </>
     );
 };

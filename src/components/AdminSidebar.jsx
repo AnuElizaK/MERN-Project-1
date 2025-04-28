@@ -14,6 +14,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 const AdminSidebar = () => {
   const [isSidebarExpanded, setSidebarExpanded] = React.useState(false);
@@ -103,6 +104,14 @@ const AdminSidebar = () => {
                 primary="Logout"
                 sx={{ color: isSidebarExpanded ? 'white' : 'inherit', marginLeft: isSidebarExpanded ? 2 : 0 }}
               />)}
+          </ListItem>
+          <ListItem onClick={() => window.location.href = '/AdminMembers'} button id="asbutton">  
+            <Tooltip title="Manage Members" placement="right">
+              <GroupsIcon sx={{ width: 32, height: 32, marginLeft: 0.5 }} />
+            </Tooltip>
+            {isSidebarExpanded && (
+              <ListItemText primary="Profile" sx={{ color: 'white', marginLeft: isSidebarExpanded ? 2 : 0 }} />
+            )}
           </ListItem>
         </List>
       </Drawer>

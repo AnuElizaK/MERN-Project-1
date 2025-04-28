@@ -55,7 +55,7 @@ const Login = () => {
         } catch (error) {
             if (error.response?.status === 403) {
                 // Handle insufficient access
-                alert('Access denied: Only Admins.');
+                alert('Access denied: Admins only .');
                 navigate('/'); // Redirect to the roles selection page
             } else {
                 console.error(error);

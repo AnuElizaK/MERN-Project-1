@@ -10,7 +10,6 @@ import {
   Container
 } from '@mui/material';
 import { Groups, Event, Campaign, Assessment } from '@mui/icons-material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const AdminDashboard = ({ isSidebarExpanded }) => {
   const navigate = useNavigate();
@@ -68,18 +67,6 @@ const AdminDashboard = ({ isSidebarExpanded }) => {
                   <Typography variant="h6">Announcements</Typography>
                   <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminAnno')}>
                     Post Announcements
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <Card sx={{ p: 5, textAlign: 'center', borderRadius: 3, boxShadow: 3 }}>
-                <AccountCircleIcon sx={{ fontSize: 40, color: '#2bd7c6' }} />
-                <CardContent>
-                  <Typography variant="h6">Meetings</Typography>
-                  <Button variant="outlined" fullWidth sx={{ mt: 2 }} onClick={() => handleCardClick('/AdminMeetings')}>
-                    Manage Meetings
                   </Button>
                 </CardContent>
               </Card>

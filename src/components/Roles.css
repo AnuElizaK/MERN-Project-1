@@ -1,30 +1,50 @@
-#rh01{
+#rh01 {
     font-family: 'Gilda Display', cursive;
     text-align: center;
     font-weight: 100;
-    font-size: larger;
+    font-size: 2rem;
     line-height: 2.0;
     margin-top: 40px;
 }
-#rh02{
+
+#rh02 {
     text-align: center;
     font-weight: 100;
+    font-size: 1.5rem;
     margin-top: 20px;
 }
-#rbox{
-    background: linear-gradient(to bottom, #ffffff00, #8379a170, #ffffff00 );
-    width: 40%;
-    margin: auto;
-}
-#rc1, #rc2{
+
+#rc1, #rc2 {
     background-color: #f2eeff97;
     transition: 0.5s;
+    width: 50%;
+    max-width: 300px;
 }
-#rc1:hover, #rc2:hover{
+
+#rc1:hover, #rc2:hover {
     background-color: #f2eeff;
     transform: scale(1.03);
 }
-#rb{
+
+#rb {
     color: white;
-    background: linear-gradient(to right, #000000, #3b0e76, #741a8f );
+    background: linear-gradient(to right, #000000, #3b0e76, #741a8f);
+}
+
+@media (max-width: 768px) {
+    #rh01 {
+        font-size: 1.8rem;
+    }
+
+    #rh02 {
+        font-size: 1.2rem;
+    }
+
+    #rd {
+        width: 80%;
+    }
+
+    #rc1, #rc2 {
+        max-width: 90%;
+    }
 }
