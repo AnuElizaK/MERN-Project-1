@@ -45,6 +45,9 @@ const Login = () => {
             if (role === 'Admin') {
                 navigate('/admindashboard');
                 window.dispatchEvent(new Event('storage'));           
+            } else if (role === 'Super Admin') {
+                navigate('/superadmin');
+                window.dispatchEvent(new Event('storage'));
             } else if (role === 'Member' && loginType === 'Admin') {
                 alert('Access denied: You do not have admin privileges. Try logging in as a member.');
                 navigate('/');

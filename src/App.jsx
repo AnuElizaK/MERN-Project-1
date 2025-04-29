@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import SuperAdmin from './components/SuperAdmin'
 import Header from './components/Header'
 import AdminSidebar from './components/AdminSidebar'
 import Dashboard from './components/Dashboard'
@@ -35,25 +36,27 @@ const App = () => {
   }, []);
   return (
     <Router>
-      {role=== 'Admin' && <AdminSidebar/>}
+      {role === 'Admin' && <AdminSidebar/>}
       {role === 'Member' && <Header />}
 
       <Routes>
         <Route path="/" element={<Roles />} />
         <Route path="/login" element={<Login />} />
+        
         {role === 'Admin' && (
           <>
-          <Route path="/admindashboard" element={<AdminDashboard />} />
-          <Route path="/adminmembers" element={<ProtectedRoutes><AdminMembers /></ProtectedRoutes>} />
-          <Route path="/adminevents" element={<ProtectedRoutes><AdminEvents /></ProtectedRoutes>} />
-          <Route path="/adminanno" element={<ProtectedRoutes><AdminAnno /></ProtectedRoutes>} />
-          <Route path="/adminreports" element={<ProtectedRoutes><AdminReports /></ProtectedRoutes>} />
-          <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
+            <Route path="/admindashboard" element={<AdminDashboard />} />
+            <Route path="/adminmembers" element={<ProtectedRoutes><AdminMembers /></ProtectedRoutes>} />
+            <Route path="/adminevents" element={<ProtectedRoutes><AdminEvents /></ProtectedRoutes>} />
+            <Route path="/adminanno" element={<ProtectedRoutes><AdminAnno /></ProtectedRoutes>} />
+            <Route path="/adminreports" element={<ProtectedRoutes><AdminReports /></ProtectedRoutes>} />
+            <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
           </>
         )}        
+        
         {role === 'Member' && (
           <>
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/events" element={<ProtectedRoutes><Events /></ProtectedRoutes>} />
             <Route path="/announcements" element={<ProtectedRoutes><Announcements /></ProtectedRoutes>} />
             <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
@@ -62,8 +65,14 @@ const App = () => {
             <Route path="/club3" element={<ProtectedRoutes><Club3 /></ProtectedRoutes>} />
             <Route path="/club4" element={<ProtectedRoutes><Club4 /></ProtectedRoutes>} />
             <Route path="/club5" element={<ProtectedRoutes><Club5 /></ProtectedRoutes>} />
-            <Route path="/enrollment" element={<ProtectedRoutes><Enroll /></ProtectedRoutes>} />
+            <Route path="/enroll" element={<ProtectedRoutes><Enroll /></ProtectedRoutes>} />
 
+          </>
+        )}
+        
+        {role === 'Super Admin' && (
+          <>
+            <Route path="/superadmin" element={<ProtectedRoutes><SuperAdmin /></ProtectedRoutes>} />
           </>
         )}
       </Routes>

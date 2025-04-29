@@ -1,8 +1,11 @@
 import React from 'react'
+import { Toolbar } from '@mui/material'
 
-const AdminAnno = () => {
+const AdminAnno = ({ isSidebarExpanded }) => {
   return (
-    <div>AdminAnno</div>
+    <>
+      <Toolbar id="atoolbar" sx={{marginLeft: isSidebarExpanded ? 0 : 9 }}>Announcements</Toolbar>
+    </>
   )
 }
 

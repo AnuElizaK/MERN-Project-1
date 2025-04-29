@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Box,
+  Toolbar,
   Typography,
   Button,
   TextField,
@@ -14,6 +15,7 @@ import {
   ListItemText,
   Card,
   CardContent,
+  BottomNavigation
 } from '@mui/material';
 
 const AdminMembers = ({ isSidebarExpanded }) => {
@@ -34,6 +36,8 @@ const AdminMembers = ({ isSidebarExpanded }) => {
   };
 
   return (
+    <>
+    <Toolbar id="atoolbar" sx={{marginLeft: isSidebarExpanded ? 0 : 9 }}>Members</Toolbar>
     <Box sx={{ minHeight: '100vh',
       transition: 'margin-left 0.3s ease', 
       marginLeft: isSidebarExpanded ? 0 : 10, 
@@ -248,6 +252,8 @@ const AdminMembers = ({ isSidebarExpanded }) => {
         </List>
       </List>
     </Box>
+    <BottomNavigation id="bn"><Typography>&copy; 2025 College Club Portal</Typography></BottomNavigation>
+    </>
   );
 };
 
